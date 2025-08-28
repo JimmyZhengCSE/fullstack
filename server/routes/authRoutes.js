@@ -4,10 +4,15 @@ const cors = require('cors')
 const { test, registerUser, loginUser, getProfile, logoutUser } = require('../controllers/authControllers')
 
 // Middleware
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://fullstack-dxuf.onrender.com'
+];
+
 router.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:5173'
+        origin: allowedOrigins
     })
 )
 
