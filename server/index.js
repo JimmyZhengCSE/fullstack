@@ -8,7 +8,7 @@ const app = express()
 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log('Connected to database'))
-    .catch(() => console.log('Failed to connect to database', err))
+    .catch((err) => console.log('Failed to connect to database', err))
 
 
 // Middleware
